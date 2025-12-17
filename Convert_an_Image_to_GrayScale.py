@@ -1,7 +1,12 @@
 import cv2
-image = cv2.imread("sample.jpg")
-gray_image=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-cv2.imshow("Original Image", image)
-cv2.imshow("Grayscale Image",gray_image)
+img = cv2.imread("input.jpg")
+if img is None:
+    print("Error: Image not found or path is wrong")
+    exit()
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow("Original Image", img)
+cv2.imshow("Grayscale Image", gray)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
